@@ -3,7 +3,7 @@
 environment:
   matrix:
   #node.js
-  - nodejs_version:"6"
+  - nodejs_version: "6"
 #Initial scripts.(runs after repo cloning)
 install:
   # Get stable version of nodejs or io.js
