@@ -7,7 +7,7 @@ environment:
 #Initial scripts.(runs after repo cloning)
 install:
   # Get stable version of nodejs or io.js
-  - ps:Install-Product node $env:nodejs_version
+  - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install
 # post_install test scripts.
