@@ -1,12 +1,13 @@
 
 import './index.css';
 import {getUsers} from './api/userApi';
+ 
 
 //Populate table of users via API call
-getUsers().then(users=>{
-    let usersBody = "";
-    users.forEach(user=>{
-        usersBody += `
+getUsers().then(users => {
+  let usersBody = "";
+  users.forEach(user => {
+    usersBody += `
           <tr>
             <td><a href=# data-id="${user.id}" class="deleteUser">Delete User</a></td>
             <td>${user.id}</td>
@@ -14,9 +15,7 @@ getUsers().then(users=>{
             <td>${user.lastName}</td>
             <td>${user.email}</td>
           </tr>
-        `
-    });
-    global.document.getElementById('users').innerHTML=usersBody;
-        
-    
+    `
+  });
+  global.document.getElementById('users').innerHTML = usersBody;
 });
