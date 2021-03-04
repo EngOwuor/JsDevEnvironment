@@ -5,7 +5,7 @@
     return get('users');
 }
 function get(url){
-    return fetch(url).then(res => res.json()).catch(err => console.log(err));
+    return fetch(url).then(res => res.json()).catch(err => console.log(err)); //eslint-disable-line no-console
 }
     
 //function onSuccess(response){
