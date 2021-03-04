@@ -16,3 +16,13 @@ function get(url){
 //function onError(error){
 //    console.log(error); //eslint-disable-line no-console
 //}
+export function deleteUser(id){
+    return del(`users/${id}`);
+}
+
+function del(url){
+    const request = new Request(baseUrl + url, {
+        method : 'DELETE'
+    })
+    return fetch(request).then(res => res.json()).catch(err => console.log(err));//eslint-disable-line no-console
+}
