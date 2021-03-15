@@ -1,4 +1,5 @@
 
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
@@ -16,6 +17,21 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    // Create html file that include bundled js.
+    new HtmlWebpackPlugin({
+      template:'src/index.html',
+      minify:{
+        removeComments:true,
+        collapseWhitespace:true,
+        removeRedundantAttributes:true,
+        removeStyleLinkTypeAttributes:true,
+        keepClosingSlash:true,
+        minifyJS:true,
+        minifyCSS:true,
+        minifyURLs:true
+      },
+      inject:true
+    }),
     //Eliminate dublicate packages when generating bundles
     new webpack.optimize.DedupePlugin(),
     //Minify JS
