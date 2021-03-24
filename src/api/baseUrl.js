@@ -1,7 +1,7 @@
 
 export default function getBaseUrl(){
     
-    return getParameterByName('useMockApi') ? 'http://localhost:3001/':'/';
+    return getParameterByName('useMockApi') ? 'http://localhost:3001/':' https://pacific-tundra-82911.herokuapp.com/';
 }
 
 function getParameterByName(name, url = window.location.href) {
